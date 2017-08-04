@@ -7,7 +7,8 @@ defmodule Parker.Mixfile do
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps()]
+     deps: deps(),
+     elixirc_paths: elixirc_paths(Mix.env)]
   end
 
   def application do
@@ -16,8 +17,12 @@ defmodule Parker.Mixfile do
 
   defp deps do
     [
+      {:gen_stage,                "~> 0.11"},
       {:httpipe_adapters_hackney, "~> 0.9"},
       {:httpipe,                  "~> 0.9"}
     ]
   end
+
+  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(_), do: ["lib"]
 end
