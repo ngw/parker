@@ -1,5 +1,5 @@
 defmodule ParkerTest.Adapter.FakeHTTP do
-  @behaviour Parker.Fetcher.Adapter
+  @behaviour Parker.Adapter
 
   def get("http://example.com") do
     {:ok, %Parker.Element{uid: "http://example.com",
