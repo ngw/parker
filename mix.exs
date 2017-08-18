@@ -19,7 +19,8 @@ defmodule Parker.Mixfile do
     [
       {:gen_stage,                "~> 0.11"},
       {:httpipe_adapters_hackney, "~> 0.9"},
-      {:httpipe,                  "~> 0.9"}
+      {:httpipe,                  "~> 0.9"},
+      {:pqueue,                   "~> 1.7"},
     ]
   end
 

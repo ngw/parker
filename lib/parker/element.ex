@@ -9,15 +9,18 @@ defmodule Parker.Element do
   Fields' meaning:
   - `:id` - unique id
   - `:meta` - metadata
+  - `:priority` - integer
   - `:body` - body
   """
   @type t :: %Element{
     uid: String.t,
     meta: struct,
+    priority: Integer.t,
     body: String.t
   }
   defstruct [
     :uid,
+    :priority,
     meta: %{},
     body: ""
   ]
