@@ -7,7 +7,7 @@ defmodule Parker.Element do
   @typedoc """
   The `Parker.Element` struct type.
   Fields' meaning:
-  - `:id` - unique id
+  - `:uid` - unique id
   - `:meta` - metadata
   - `:priority` - integer
   - `:body` - body

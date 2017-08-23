@@ -21,8 +21,10 @@ defmodule Parker.Queue do
   Returns a new empty Queue using the specified module
   modules can be [:pqueue, :pqueue2, :pqueue3, :pqueue4]
   """
-  @spec init(atom) :: Queue.t
-  def init(module \\ :pqueue2) when module in @modules do
+  @spec init(:atom) :: Queue.t
+  def init(module \\ :pqueue2)
+  def init(nil), do: init()
+  def init(module) when module in @modules do
     %Queue{
       module: module,
       data: module.new,
